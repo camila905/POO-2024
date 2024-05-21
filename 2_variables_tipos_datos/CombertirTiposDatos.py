@@ -12,6 +12,7 @@ algunas ocaciones contenido de variables que no sean del tipo de dato str
 texto="soy una cadena de texto"
 numero=23
 
+
 print(texto+" y soy otra cadena")
 
 #concatenar un int con str
