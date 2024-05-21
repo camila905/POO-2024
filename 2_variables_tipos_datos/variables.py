@@ -6,7 +6,7 @@
 #variables
 edad=30
 estatura=1.80
-email= "Jorge_rr1032@gmail.com"
+email= "Camila_3141230010@utd.edu.mx"
 logica=True
 caracter='@'
 
