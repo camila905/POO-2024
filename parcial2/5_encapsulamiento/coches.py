@@ -1,0 +1,130 @@
+"""  
+ Programación Orinetada a Objetos POO o OOP
+
+CLASES .- es como un molde a traves del cual se puede instanciar un objeto dentro de las clases se definen los atributos (propiedades / caracteristicas) y los métodos (funciones o acciones)
+
+OBJETOS O INSTANCIAS .- son parte de una clase los objetos o instacias pertenecen a una clase, es decir para interacturar con la clase o clases y hacer uso de los atributos y metodos es necesario crear un objeto o objetos.
+
+METODO CONSTRUCTOR Este metodo especial dentro de una clase se utiliza para dar un valor a los atributos del objeto al crearlo es el primer metodo ques se ejecuta al crear el objeto y se mansa llamar automaticamente al crearlo es decir este metoso puede recibir parametros al momento de crear el objeto
+
+cuando se crear un metodo constructor se utiliza la funcion init(), para que se llame automaticamente cada vez que se utiliza la clase para crear un nuevo metodo.
+
+El self es un parametro es una referencia a la instancia actual de la clase y se utliza para acceder a variables que pertenecen a la clase.
+
+No es necesario que tenga nombre self, puedes llamarlo como quieras pero tiene que ser el primer parametro de cualquier funcion de la clase. Es decir por regla se utiliza en la palabra self pero puede ser llamado con otro nombre por ejemplo:valor, abd, parametro, etc.
+    """
+
+
+#Ejemplo 1 Crear una clase (un molde para crear mas objetos)llamada Coches y apartir de la clase crear objetos o instancias (coche) con caracteristicas similares
+
+class Coches:
+
+    #Atributos o propiedades (variables)
+    #Caracteristicas del coche
+    #metodo constructor
+    
+    def _init_(self,color,marca,modelo,velocidad,caballaje,plazas):
+        self.color=color
+        self.marca=marca
+        self.modelo=modelo
+        self.velocidad=velocidad
+        self.caballaje=caballaje
+        self.plazas=plazas
+
+  
+  
+  #El encapsulamineto o visibilidad es importante que a traves de el es posible que pythom sepa como va a utilizar y manipular los atributos y metodos de la clase
+   
+   #atributo publico
+    atributo_publico="soy un atributo publico"
+    #atributo privado
+    __atributo_privado="soy un atributo privado"
+   
+   #nota 1, para utilizar un atributo privado es necesario usarlo dentro de un atributo metodo publico
+    def Metodopublico(self):
+        return self.__atributo_privado
+   
+   #Metodo privado
+    def __Metodoprivado(self):
+     print("soy un metodo privado")
+     
+     #nota 2 para utilizar un metodo privado es necesario usarlo dentro de un metodo publico
+     def getMetodopublico(self):
+         self.__Metodoprivado()
+   
+    #Metodos o acciones o funciones que hace el objeto 
+
+    def acelerar(self):
+        self.velocidad+=1
+
+    def frenar(self):
+        self.velocidad-=1
+
+
+    #Crear los metodos setters y getters .- estos metodos son importantes y necesarios en todos clases para que el programador interactue con los valores de los atributos a traves de estos metodos ... digamos que es la manera mas adecuada y recomendada para solicitar un valor (get) y/o para ingresar o cambiar un valor (set) a un atributo en particular de la clase a traves de un objeto. 
+    # En teoria se deberia de crear un metodo Getters y Setters por cada atributo que contenga la clase
+    #   Los metodos get siempre regresan valor es decir el valor de la propiedad a traves del return
+    #Por otro lado el metodo set siempre recibe parametros para cambiar o modificar el valor del atributo o propiedad en cuestion
+
+    def getColor(self):
+      return self.color
+
+    def setColor(self,color):
+      self.color=color 
+
+    def getMarca(self):
+      return self.marca
+
+    def setMarca(self,marca):
+      self.marca=marca 
+
+    def getModelo(self):
+      return self.modelo
+
+    def setModelo(self,modelo):
+      self.modelo=modelo        
+
+    def getVelocidad(self):
+       return self.velocidad
+
+    def setVelocidad(self,velocidad):
+      self.velocidad=velocidad 
+
+    def getCaballaje(self):
+       return self.caballaje
+
+    def setCaballaje(self,caballaje):
+      self.caballaje=caballaje  
+
+    def getPlazas(self):
+       return self.plazas
+
+    def setPlazas(self,plazas):
+      self.plazas=plazas 
+
+    def getInfo(self):
+       print(f"Marca: {self.getMarca()} {self.getColor()}, numeros de plazas: {self.getPlazas()} \nModelo: {self.getModelo()} con una velocidad de {self.getVelocidad()} Km/h y un potencia de {self.getCaballaje()} hp")  
+
+#Fin definir clase
+
+from coches import*
+
+print("Objeto 1")
+coche1=Coches("Blanco","VW","2022", 220, 150,5)
+
+# coche1.getInfo()
+
+
+# print("Objeto 2")
+# coche2=Coches("Azul","Nisan","2020",180,150,6)
+# coche2.getInfo()
+
+
+
+#implementar el encapsulamiento o visibilidad
+
+print(coche1.atributo_publico)
+# print(coche1.__atributo_privado)#no es posible
+print(coche1.Metodopublico())
+# coche1.__Metodoprivaso()no es posible
+coche1.getMetodopublico()
