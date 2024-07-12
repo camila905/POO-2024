@@ -110,8 +110,8 @@ class Coches:
 
 #Clases, secundarias, subclases, hijas 
 class Caminiones(Coches):
-   def _init_(color,marca,modelo,velocidad,caballaje,plazas,eje,capacidadCarga):
-      super()._init_(color,marca,velocidad,caballaje,plazas)
+   def _init_(self,color,marca,modelo,velocidad,caballaje,plazas,eje,capacidadCarga):
+      super()._init_(self,color,marca,velocidad,caballaje,plazas)
       self.eje=eje
       self.capacidadCarga=capacidadCarga
 
@@ -130,6 +130,3 @@ def getEje(self):
 
 def getcapacidadCarga(self):
    return self.CapaiadCarga
-
-def
-  
