@@ -3,7 +3,7 @@ import mysql.connector
 try:
 #Conexioncon la base de datos de MySQL
     conexion=mysql.connector.connect(
-    host="loalhost",
+    host="localhost",
     user="root",
     password="",
     database="bd_python"
